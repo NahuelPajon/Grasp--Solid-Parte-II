@@ -8,9 +8,11 @@ namespace Full_GRASP_And_SOLID.Library
         public static void PrintRecipe(Recipe recipe)
         {
             Console.WriteLine($"Receta de {recipe.FinalProduct.Description}:");
-            Recipe myRecipe = new Recipe(); // Crea una instancia de Recipe
-            myRecipe.TheSteps(); // Llama al método TheSteps de Recipe
-            
+            foreach (Step step in recipe.GetSteps())
+            {
+                Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
+                    $"usando '{step.Equipment.Description}' durante {step.Time}");
+            }
         }
     }
 }

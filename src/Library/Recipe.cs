@@ -26,16 +26,9 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        public void TheSteps()
+        public ArrayList GetSteps()
         {
-            
-            List<string> steps = new List<string>();
-            foreach (Step step in this.steps)
-            {
-                steps.Add($"{step.Quantity} de '{step.Input.Description}' " +
-                $"usando '{step.Equipment.Description}' durante {step.Time}");
-            }
-            
+            return this.steps;
         }
     }
 }
